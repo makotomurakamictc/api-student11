@@ -1,0 +1,10 @@
+applications:
+- name: api-student11
+  buildpack: java_buildpack_offline
+  path: target/apidemo-0.0.1-SNAPSHOT.jar
+  memory: 1g 
+  routes:
+    - route: api-student11.apps.internal
+    - route: api-student11.apps.pcf.pcflab.jp
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.0.+}}'
